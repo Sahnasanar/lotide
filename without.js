@@ -1,3 +1,5 @@
+
+  
 const eqArrays = function (arr1,arr2) {
   var result  = "";
   for(let i in arr1){
@@ -12,14 +14,25 @@ const eqArrays = function (arr1,arr2) {
 }
     console.log(result);
   }
-  const without = function(source,remove){
-    const answer = [];
-    for(let i in source) {
-      for (let j in remove) {
-        answer.without(source[i],remove[j])
-      }
+  
+  const assertArraysEqual = function (arr1, arr2) {
+    if (arr1 === arr2) {
+      console.log(`Assertion Passed: ${arr1} === ${arr2}`);
+    } else {
+      console.log(`Assertion Failed: ${arr1} !== ${arr2}`);
     }
-    return answer.push();
-  }
+  };
+
+  const without = function(source, removeItem) {
+      let result = [];
+      for (let i in source) {
+        if (!removeItem.includes(source[i])) {
+          result.push(source[i]);
+        }
+      }
+      return result;
+    };
+    
   console.log(without([1, 2, 3], [1]));
+  console.log(without(["1", "2", "3"], [1, 2, "3"])) // => ["1", "2"]
   
