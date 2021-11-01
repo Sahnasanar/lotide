@@ -13,4 +13,4 @@
   };
 
 
-module.exports = middle.js
+module.exports = middle
